@@ -76,7 +76,7 @@ public class InsertData {
         return this;
     }
     @Step("Ввод даты рождения")
-    public void addBirthDate (String day, String month, String year) {
+    public InsertData addBirthDate (String day, String month, String year) {
         $("[ng-model='person.BirthDate']").click();
         $("[style='text-transform:capitalize']").doubleClick();
         $(".glyphicon-chevron-left").click();
@@ -84,5 +84,18 @@ public class InsertData {
         $$(".dropdown-menu.datepicker span").findBy(text(year)).click();
         $$(".dropdown-menu.datepicker span").findBy(text(month)).click();
         $$(".dropdown-menu.datepicker span").findBy(text(day)).click();
+        return this;
+    }
+    @Step("Ввод места жительства")
+    public InsertData addLocation (String region, String city, String street) {
+        $("[field-name='person.ObjectAddress']").click();
+        $("[property-name='address.Region.Code'] .chosen-single").click();
+        $("[property-name='address.Region.Code'] [type='text']").setValue(region).pressEnter();
+        $("[selectedobject='address.City.FullName'] input").setValue(city);
+        $("[ng-repeat='result in results']").click();
+        $("[savedobject='address.Street'] input").setValue(street);
+        $("[ng-repeat='result in results']").click();
+        $("[ng-click='ok()']").click();
+        return this;
     }
 }

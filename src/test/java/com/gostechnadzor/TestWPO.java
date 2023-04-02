@@ -46,9 +46,9 @@ public class TestWPO extends TestBase {
                 .addName("Имя")
                 .addSurname("Фамилия")
                 .addTIN("650110509000")
+                .addGender("Ж")
                 .addCitizenship("Ангола")
                 .addBirthplace("Место рождения")
-                .addGender("Ж")
                 .addBirthDate("21","мая","1990");
     }
 

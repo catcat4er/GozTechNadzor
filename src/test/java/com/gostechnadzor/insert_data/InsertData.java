@@ -93,6 +93,7 @@ public class InsertData {
         $("[property-name='address.Region.Code'] [type='text']").setValue(region).pressEnter();
         $("[selectedobject='address.City.FullName'] input").setValue(city);
         $("[ng-repeat='result in results']").click();
+        sleep(500);
         $("[savedobject='address.Street'] input").setValue(street);
         $("[ng-repeat='result in results']").click();
         $("[ng-click='ok()']").click();

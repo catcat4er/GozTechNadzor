@@ -32,7 +32,7 @@ public class TestWPO extends TestBase {
     public void openMainPageNegative(){
         InsData
                 .openBrowser(site_port)
-                .login(login, password)
+                .login("wronglogin", password)
                 .assertFalseLogin();
     }
 
@@ -49,7 +49,7 @@ public class TestWPO extends TestBase {
                 .addCitizenship("Ангола")
                 .addBirthplace("Место рождения")
                 .addGender("Ж")
-                .addBirthDate("21","фев","1990");
+                .addBirthDate("21","мая","1990");
     }
 
 }

@@ -7,5 +7,7 @@ public interface InsertingMainData extends Config {
     String login();
     String password();
     String site_port();
+    String site();
+    String remoteUrl();
 
 }

@@ -1,6 +1,5 @@
 package com.gostechnadzor;
 
-import com.gostechnadzor.insert_data.InsertData;
 import com.gostechnadzor.insert_data.InsertingMainData;
 import com.gostechnadzor.test_base.TestBase;
 import io.qameta.allure.Owner;
@@ -21,35 +20,44 @@ public class TestWPO extends TestBase {
 
 
     @Test
-    public void openMainPagePositive(){
-        InsData
+    public void openMainPagePositive() {
+
+        loginPage
                 .openBrowser(site_port)
                 .login(login, password)
                 .assertTrueLogin();
     }
 
     @Test
-    public void openMainPageNegative(){
-        InsData
+    public void openMainPageNegative() {
+
+        loginPage
                 .openBrowser(site_port)
                 .login("wronglogin", password)
                 .assertFalseLogin();
     }
 
     @Test
-    public void testForm(){
-        InsData
+    public void testForm() {
+
+        loginPage
                 .openBrowser(site_port)
                 .login(login, password)
-                .assertTrueLogin()
-                .addIndividual()
+                .assertTrueLogin();
+        mainPage
+                .pressOperationButton()
+                .pressListOfPeople()
+                .pressAddButton()
+                .pressAddIndividualBtn()
+                .assertIndividualPageOpen();
+        individualModal
                 .addName("Имя")
                 .addSurname("Фамилия")
                 .addTIN("650110509000")
                 .addGender("Ж")
                 .addCitizenship("Ангола")
                 .addBirthplace("Место рождения")
-                .addBirthDate("21","мая","1990")
+                .addBirthDate("21", "мая", "1990")
                 .addLocation("Пенз", "пенз", "пенз");
     }
 

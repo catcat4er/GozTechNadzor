@@ -6,6 +6,9 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.gostechnadzor.attach.Attachments;
 import com.gostechnadzor.insert_data.InsertData;
 import com.gostechnadzor.insert_data.InsertingMainData;
+import com.gostechnadzor.modal.IndividualModal;
+import com.gostechnadzor.pages.LoginPage;
+import com.gostechnadzor.pages.MainPage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
@@ -15,7 +18,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 public class TestBase {
-    public InsertData InsData = new InsertData();
+    public InsertData insData = new InsertData();
+    public LoginPage loginPage = new LoginPage();
+    public MainPage mainPage = new MainPage();
+    public IndividualModal individualModal = new IndividualModal();
+
+    public
 
     @BeforeAll
     static void setUp() {

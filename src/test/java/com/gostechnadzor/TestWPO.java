@@ -1,6 +1,7 @@
 package com.gostechnadzor;
 
 import com.gostechnadzor.insert_data.InsertingMainData;
+import com.gostechnadzor.modal.IndividualModal;
 import com.gostechnadzor.test_base.TestBase;
 import io.qameta.allure.Owner;
 import org.aeonbits.owner.ConfigFactory;
@@ -58,7 +59,14 @@ public class TestWPO extends TestBase {
                 .addCitizenship("Ангола")
                 .addBirthplace("Место рождения")
                 .addBirthDate("21", "мая", "1990")
-                .addLocation("Пенз", "пенз", "пенз");
+                .addLocation();
+        addressModal
+                .setRegion("Пенз")
+                .setCity("пенз")
+                .setStreet("пенз")
+                .pressOk();
+        IndividualModal
+                .pressOk();
     }
 
 }

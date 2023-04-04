@@ -1,2 +1,4 @@
-package com.gostechnadzor.pages;public class MainPage {
+package com.gostechnadzor.pages;
+
+public class MainPage {
 }

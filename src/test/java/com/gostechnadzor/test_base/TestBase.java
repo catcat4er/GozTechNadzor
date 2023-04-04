@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.gostechnadzor.attach.Attachments;
+import com.gostechnadzor.insert_data.InsertData;
 import com.gostechnadzor.insert_data.InsertingMainData;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
@@ -14,10 +15,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 public class TestBase {
-
+    public InsertData InsData = new InsertData();
 
     @BeforeAll
     static void setUp() {
+
+
         InsertingMainData PersonalData = ConfigFactory.create(InsertingMainData.class);
         String remoteUrl = PersonalData.remoteUrl();
         String site = PersonalData.site();

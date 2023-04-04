@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Test lk GosTechNadzor")
 public class TestWPO extends TestBase {
 
-    InsertData InsData = new InsertData();
+
     InsertingMainData PersonalData = ConfigFactory.create(InsertingMainData.class);
     String login = PersonalData.login();
     String password = PersonalData.password();

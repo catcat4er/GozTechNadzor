@@ -1,2 +1,4 @@
-package com.gostechnadzor.modal;public class CalendarModal {
+package com.gostechnadzor.modal;
+
+public class CalendarModal {
 }

@@ -1,2 +1,4 @@
-package com.gostechnadzor.modal;public class IndividualModal {
+package com.gostechnadzor.modal;
+
+public class IndividualModal {
 }

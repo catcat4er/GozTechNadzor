@@ -4,8 +4,8 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.gostechnadzor.attach.Attachments;
-import com.gostechnadzor.insert_data.InsertData;
 import com.gostechnadzor.insert_data.InsertingMainData;
+import com.gostechnadzor.modal.AddressModal;
 import com.gostechnadzor.modal.IndividualModal;
 import com.gostechnadzor.pages.LoginPage;
 import com.gostechnadzor.pages.MainPage;
@@ -18,16 +18,15 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 public class TestBase {
-    public InsertData insData = new InsertData();
     public LoginPage loginPage = new LoginPage();
     public MainPage mainPage = new MainPage();
     public IndividualModal individualModal = new IndividualModal();
+    public AddressModal addressModal = new AddressModal();
 
     public
 
     @BeforeAll
     static void setUp() {
-
 
         InsertingMainData PersonalData = ConfigFactory.create(InsertingMainData.class);
         String remoteUrl = PersonalData.remoteUrl();
@@ -35,7 +34,7 @@ public class TestBase {
 
         Configuration.baseUrl = site;
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = remoteUrl;
+//        Configuration.remote = remoteUrl;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);

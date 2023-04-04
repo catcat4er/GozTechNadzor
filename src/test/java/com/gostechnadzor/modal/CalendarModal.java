@@ -1,5 +1,7 @@
 package com.gostechnadzor.modal;
 
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
@@ -8,15 +10,21 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class CalendarModal {
 
+
+    SelenideElement calendarHeadWithYear = $("[ng-model='person.BirthDate']");
+    SelenideElement calendarHeadWithMonth = $("[style='text-transform:capitalize']");
+    SelenideElement leftSwitchingArrow = $(".glyphicon-chevron-left");
+    ElementsCollection calendarField = $$(".dropdown-menu.datepicker span");
+
     @Step("Ввод даты")
     public void setDate(String day, String month, String year) {
-        $("[ng-model='person.BirthDate']").click();
-        $("[style='text-transform:capitalize']").doubleClick();
-        $(".glyphicon-chevron-left").click();
-        $(".glyphicon-chevron-left").doubleClick();
-        $$(".dropdown-menu.datepicker span").findBy(text(year)).click();
-        $$(".dropdown-menu.datepicker span").findBy(text(month)).click();
-        $$(".dropdown-menu.datepicker span").findBy(text(day)).click();
+        calendarHeadWithYear.click();
+        calendarHeadWithMonth.doubleClick();
+        leftSwitchingArrow.click();
+        leftSwitchingArrow.doubleClick();
+        calendarField.findBy(text(year)).click();
+        calendarField.findBy(text(month)).click();
+        calendarField.findBy(text(day)).click();
     }
 
 }

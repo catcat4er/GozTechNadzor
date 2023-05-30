@@ -23,7 +23,6 @@ public class TestWPO extends TestBase {
     @Test
     public void openMainPagePositive(){
         InsData
-                .openBrowser(site_port)
                 .login(login, password)
                 .assertTrueLogin();
     }
@@ -31,7 +30,6 @@ public class TestWPO extends TestBase {
     @Test
     public void openMainPageNegative(){
         InsData
-                .openBrowser(site_port)
                 .login("wronglogin", password)
                 .assertFalseLogin();
     }
@@ -39,7 +37,6 @@ public class TestWPO extends TestBase {
     @Test
     public void testForm(){
         InsData
-                .openBrowser(site_port)
                 .login(login, password)
                 .assertTrueLogin()
                 .addIndividual()

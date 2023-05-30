@@ -24,7 +24,7 @@ public class TestBase {
 
         Configuration.baseUrl = site;
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = remoteUrl;
+        //Configuration.remote = remoteUrl;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
